@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RFA L9 - Análise Estratégica de Conteúdos e Conversão em Leads Orgânicos</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="dashboard-header">
+            <h1>RFA L9 - Análise Estratégica de Conteúdos e Conversão em Leads Orgânicos</h1>
+            <p class="subtitle">Período: 23 Jul - 14 Ago 2025</p>
+        </header>
+
+        <!-- Tab Navigation -->
+        <nav class="tab-navigation">
+            <button class="tab-btn active" data-tab="resumo">Resumo</button>
+            <button class="tab-btn" data-tab="timeline">Timeline de Conteúdos</button>
+            <button class="tab-btn" data-tab="horarios">Horários</button>
+            <button class="tab-btn" data-tab="utm-ranking">Ranking por Fonte UTM</button>
+        </nav>
+
+        <!-- Tab Content -->
+        <div class="tab-content">
+            <!-- Tab 1: Resumo -->
+            <div id="resumo" class="tab-panel active">
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <h3>Total Leads</h3>
+                        <div class="metric-value">3,680</div>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Stories Rangel Leads</h3>
+                        <div class="metric-value">1,707</div>
+                        <div class="metric-change positive">46.4%</div>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Stories RFA Leads</h3>
+                        <div class="metric-value">423</div>
+                        <div class="metric-change positive">11.5%</div>
+                    </div>
+                    <div class="metric-card">
+                        <h3>Melhor Estratégia de Captação Rangel Dia</h3>
+                        <div class="metric-value">27/07</div>
+                        <div class="metric-subtext">415 leads</div>
+                    </div>
+                </div>
+
+                <div class="insights-section">
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>Top 5 Dias de Performance</h3>
+                            <div class="top-days-list">
+                                <div class="top-day-item">
+                                    <span class="rank">#1</span>
+                                    <span class="date">23/07</span>
+                                    <span class="leads">735 leads</span>
+                                    <span class="strategy">Lançamento + Manychat</span>
+                                </div>
+                                <div class="top-day-item">
+                                    <span class="rank">#2</span>
+                                    <span class="date">27/07</span>
+                                    <span class="leads">415 leads</span>
+                                    <span class="strategy">Pesquisa Interativa</span>
+                                </div>
+                                <div class="top-day-item">
+                                    <span class="rank">#3</span>
+                                    <span class="date">24/07</span>
+                                    <span class="leads">326 leads</span>
+                                    <span class="strategy">Educativo Noturno</span>
+                                </div>
+                                <div class="top-day-item">
+                                    <span class="rank">#4</span>
+                                    <span class="date">11/08</span>
+                                    <span class="leads">253 leads</span>
+                                    <span class="strategy">Pesquisa + Poatan</span>
+                                </div>
+                                <div class="top-day-item">
+                                    <span class="rank">#5</span>
+                                    <span class="date">03/08</span>
+                                    <span class="leads">238 leads</span>
+                                    <span class="strategy">Live Tailândia</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>Principais Insights</h3>
+                            <ul class="insights-list">
+                                <li><strong>Horário de Ouro:</strong> 11h-11h30 com 415 leads em uma única estratégia</li>
+                                <li><strong>Melhor Formato:</strong> Pesquisa interativa + CTA imediato (27/07)</li>
+                                <li><strong>Volume Máximo:</strong> Estratégia de lançamento completo (23/07)</li>
+                                <li><strong>Autoridade Externa:</strong> Conteúdo Tailândia + Poatan geraram 433 leads</li>
+                                <li><strong>Lives Noturnas:</strong> 18h mostrou-se horário efetivo para educativo</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 2: Timeline de Conteúdos -->
+            <div id="timeline" class="tab-panel">
+                <div class="timeline-controls">
+                    <div class="filter-group">
+                        <label for="profile-filter" class="form-label">Filtrar por Perfil:</label>
+                        <select id="profile-filter" class="form-control">
+                            <option value="all">Todos os Perfis</option>
+                            <option value="rangel">Rangel Stories</option>
+                            <option value="rfa">Academia RFA</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="timeline-charts">
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>Evolução Diária de Leads</h3>
+                            <canvas id="timeline-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-details">
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>Timeline de Estratégias</h3>
+                            <div class="timeline-list" id="timeline-events"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 3: Horários -->
+            <div id="horarios" class="tab-panel">
+                <div class="hour-analysis">
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>Análise de Conversão por Horário</h3>
+                            <canvas id="hour-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hour-grid">
+                    <h3>Performance por Faixa Horária</h3>
+                    <div class="hour-slots">
+                        <div class="hour-slot">
+                            <div class="hour-time">06:00-08:00</div>
+                            <div class="hour-stats">
+                                <div class="conversion-rate">18.5%</div>
+                                <div class="engagement-level">Alta conversão</div>
+                                <div class="leads-count">145 leads</div>
+                            </div>
+                            <div class="performance-bar">
+                                <div class="bar-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="hour-slot">
+                            <div class="hour-time">08:00-10:00</div>
+                            <div class="hour-stats">
+                                <div class="conversion-rate">14.2%</div>
+                                <div class="engagement-level">Boa conversão</div>
+                                <div class="leads-count">98 leads</div>
+                            </div>
+                            <div class="performance-bar">
+                                <div class="bar-fill" style="width: 72%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="hour-slot">
+                            <div class="hour-time">10:00-12:00</div>
+                            <div class="hour-stats">
+                                <div class="conversion-rate">11.8%</div>
+                                <div class="engagement-level">Média conversão</div>
+                                <div class="leads-count">67 leads</div>
+                            </div>
+                            <div class="performance-bar">
+                                <div class="bar-fill" style="width: 58%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="hour-slot">
+                            <div class="hour-time">12:00-14:00</div>
+                            <div class="hour-stats">
+                                <div class="conversion-rate">8.9%</div>
+                                <div class="engagement-level">Baixa conversão</div>
+                                <div class="leads-count">34 leads</div>
+                            </div>
+                            <div class="performance-bar">
+                                <div class="bar-fill" style="width: 48%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="hour-slot">
+                            <div class="hour-time">14:00-16:00</div>
+                            <div class="hour-stats">
+                                <div class="conversion-rate">7.5%</div>
+                                <div class="engagement-level">Baixa conversão</div>
+                                <div class="leads-count">28 leads</div>
+                            </div>
+                            <div class="performance-bar">
+                                <div class="bar-fill" style="width: 42%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="hour-slot">
+                            <div class="hour-time">16:00-18:00</div>
+                            <div class="hour-stats">
+                                <div class="conversion-rate">13.2%</div>
+                                <div class="engagement-level">Boa conversão</div>
+                                <div class="leads-count">56 leads</div>
+                            </div>
+                            <div class="performance-bar">
+                                <div class="bar-fill" style="width: 68%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="hour-slot">
+                            <div class="hour-time">18:00-20:00</div>
+                            <div class="hour-stats">
+                                <div class="conversion-rate">21.7%</div>
+                                <div class="engagement-level">Excelente conversão</div>
+                                <div class="leads-count">189 leads</div>
+                            </div>
+                            <div class="performance-bar">
+                                <div class="bar-fill" style="width: 92%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="hour-slot">
+                            <div class="hour-time">20:00-22:00</div>
+                            <div class="hour-stats">
+                                <div class="conversion-rate">16.8%</div>
+                                <div class="engagement-level">Alta conversão</div>
+                                <div class="leads-count">134 leads</div>
+                            </div>
+                            <div class="performance-bar">
+                                <div class="bar-fill" style="width: 78%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hour-insights">
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>Insights &amp; Recomendações</h3>
+                            <div class="insights-grid">
+                                <div class="insight-card premium">
+                                    <h4>Horário Premium (18:00-20:00)</h4>
+                                    <p>Maior taxa de conversão (21.7%) - ideal para campanhas premium</p>
+                                </div>
+                                <div class="insight-card morning">
+                                    <h4>Horário Matinal (06:00-08:00)</h4>
+                                    <p>Segunda melhor performance (18.5%) - público motivado para treinar</p>
+                                </div>
+                                <div class="insight-card avoid">
+                                    <h4>Evitar período almoço (12:00-16:00)</h4>
+                                    <p>Menor engajamento e conversão</p>
+                                </div>
+                                <div class="insight-card opportunity">
+                                    <h4>Fim de tarde (16:00-18:00)</h4>
+                                    <p>Boa oportunidade para conteúdo motivacional pré-treino</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tab 4: Ranking por Fonte UTM -->
+            <div id="utm-ranking" class="tab-panel">
+                <div class="utm-analysis">
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>Ranking de Fontes UTM</h3>
+                            <canvas id="utm-chart"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="utm-breakdown">
+                    <div class="utm-source-card leader">
+                        <h4>🥇 STORIES RANGEL</h4>
+                        <div class="utm-leads">1,707 leads</div>
+                        <div class="utm-percentage">46.4%</div>
+                        <div class="utm-peaks">
+                            <div class="peak">27/07: 388 leads</div>
+                            <div class="peak">23/07: 272 leads</div>
+                        </div>
+                    </div>
+                    
+                    <div class="utm-source-card second">
+                        <h4>🥈 MANYCHAT</h4>
+                        <div class="utm-leads">580 leads</div>
+                        <div class="utm-percentage">15.8%</div>
+                        <div class="utm-peaks">
+                            <div class="peak">23/07: 394 leads</div>
+                            <div class="peak">03/08: 186 leads</div>
+                        </div>
+                    </div>
+                    
+                    <div class="utm-source-card third">
+                        <h4>🥉 ACADRFA</h4>
+                        <div class="utm-leads">423 leads</div>
+                        <div class="utm-percentage">11.5%</div>
+                        <div class="utm-peaks">
+                            <div class="peak">10/08: 168 leads</div>
+                            <div class="peak">11/08: 145 leads</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="strategy-insights card">
+                    <div class="card__body">
+                        <h3>Insights de Estratégia</h3>
+                        <div class="insight-grid">
+                            <div class="insight-item">
+                                <h5>Stories Rangel Dominante</h5>
+                                <p>Stories Rangel representa quase 50% dos leads, com picos em pesquisas interativas.</p>
+                            </div>
+                            <div class="insight-item">
+                                <h5>Manychat Efetivo</h5>
+                                <p>Lives com CTA de palavra-chave geram alto volume em campanhas específicas.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
